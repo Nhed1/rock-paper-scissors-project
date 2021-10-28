@@ -8,10 +8,30 @@
     <style>body{text-align: center;}</style>
 </head>
 <body>
-    <h1>Rock Paper Scissors Project</h1>
-    <p>Open the console to play !</p>
-    <p>Type 1, 2 or 3</p>
-    
+    <div id="container">
+        <div class="divOfResult">
+            <h2><span class="whoWon"></span> Won the game!</h2>
+            <div class="result"></div>
+        </div>
+
+        <div class="play">
+            <div class="playerDiv">
+                <h2>Player</h2>
+                <div class="playerChoice"></div>
+                <div class="buttons">
+                    <button class="option rock">Rock</button>
+                    <button class="option paper">Paper</button>
+                    <button class="option scissor">Scissor</button>
+                </div>        
+            </div>
+
+            <div class="pcDiv">
+                <h2>PC</h2>
+                <div class="pcChoice"></div>
+            </div>   
+        </div>
+
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
