@@ -13,7 +13,7 @@ function score(){
     console.log(`PC choice = ${choices[pcChoice -1]} `)    
 }
 
-let userChoice = parseInt(prompt("Choose between 1-Rock, 2-Paper or 3-Scissor."))
+// let userChoice = parseInt(prompt("Choose between 1-Rock, 2-Paper or 3-Scissor."))
 let pcChoice = random();
 let choices = ["Rock", "Paper", "Scissor"]
 let ERROR = false;

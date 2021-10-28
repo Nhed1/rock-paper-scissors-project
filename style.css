@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p,h2 {
+    text-align: center;
+}
+
+#container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.divOfResult, .play {
+    width: 40rem;
+    height: 20rem;
+    border: 1px black solid;
+}
+.play {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* PLAYERS */
+.playerDiv, .pcDiv {
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    width: 20rem;
+    height: 10rem;
+}
+.playerDiv .playerChoice, .pcChoice {
+    border: 1px black solid;
+    padding: 2rem;
+}
+.buttons {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button {
+    padding: 0.7rem;
+}
+
+
+
+
