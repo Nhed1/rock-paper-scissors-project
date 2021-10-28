@@ -1,46 +1,49 @@
-function random(){
+const whoWon = function(playerWon){
+    let result;
+    if (playerWon == "tie"){
+        result = "TIE!"
+    } else if (playerWon) {
+        result = "Player Won!"
+    } else {
+        result = "PC Won!"
+    }
+    return result
+}
+    
+let choices = ["Rock", "Paper", "Scissor"],
+    pcChoice = choices[pcRandom -1],
+    userChoices = document.querySelectorAll('.buttons')
+
+userChoices.forEach(choice => {
+    choice.addEventListener('click', function(e){
+        console.log(e)
+    })
+});
+
+const pcRandom = function(){
     return Math.floor(Math.random() * 3) + 1;
-}
+};
 
-userWon = () => console.log("User won!");
+
+function checkResult() {
+ 
+    if (userChoice === pcChoice) {
+        whoWon("tie");
     
-pcWon = () => console.log("Pc won!")
-
-tie = () => console.log("it's a tie")
+    } else if (userChoice === 3 && pcChoice === 1) {
+        whoWon(false)
     
-function score(){
-    console.log(`User choice = ${choices[userChoice -1]} `)
-    console.log(`PC choice = ${choices[pcChoice -1]} `)    
+    } else if (userChoice === 1 && pcChoice === 3) {
+        whoWon(true)
+    
+    } else if (userChoice > pcChoice) {
+        whoWon(true)
+    
+    } else {
+        whoWon(false)
+    }
 }
 
-// let userChoice = parseInt(prompt("Choose between 1-Rock, 2-Paper or 3-Scissor."))
-let pcChoice = random();
-let choices = ["Rock", "Paper", "Scissor"]
-let ERROR = false;
-
-if (ERROR === false) { // this is used to avoid erros
-    score()  
-}
-
-if (userChoice > 3 || userChoice < 1){
-    console.log("This is not a option")
-    ERROR = true;
-
-} else if (userChoice === pcChoice) {
-    tie();
-
-} else if (userChoice === 3 && pcChoice === 1) {
-    pcWon()
-
-} else if (userChoice === 1 && pcChoice === 3) {
-    userWon()
-
-} else if (userChoice > pcChoice) {
-    userWon()
-
-} else {
-    pcWon()
-}
 
 
 
