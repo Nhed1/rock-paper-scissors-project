@@ -1,10 +1,14 @@
+let rock = document.createElement('i').className = 'fas fa-hand-rock'
+
 let choices = ["Rock", "Paper", "Scissor"]
     Useroption = 0,
-    userChoices = document.querySelectorAll('.option'),
+    userChoices = document.querySelectorAll('button'),
     displayWin = document.querySelector('.whoWon'),
-    displayPlayer = document.querySelector('.playerChoice'),
-    displayPC = document.querySelector('.pcChoice')
+    displayPlayer = document.querySelector('.playerDiv'),
+    displayPC = document.querySelector('.pcDiv')
 
+displayPC.appendChild(rock)
+displayPC.className.add('working')
 const whoWon = function(playerWon){
     let result;
     if (playerWon == "tie"){
@@ -16,7 +20,6 @@ const whoWon = function(playerWon){
     }
     return result
 }
-
 
 const pcRandom = function(){
     let num = Math.floor(Math.random() * 3) + 1
@@ -51,9 +54,9 @@ const getOption = function(e) {
     let valuePc = pcRandom()
     let result = checkResult(Useroption, valuePc)
     displayWin.textContent = result
-    displayPlayer.innerHTML = choices[Useroption-1]
+    displayPlayer.appendChild(rock)
     displayPC.innerHTML = choices[valuePc-1]
-    console.log(Useroption)
+    console.log(result)
 }
 
 userChoices.forEach(choice => {
