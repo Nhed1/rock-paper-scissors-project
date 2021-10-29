@@ -68,6 +68,8 @@ p,h2 {
 
 i {
     font-size: 30px;
+    pointer-events: none; 
+    /* avoid to click in the i */
 }
 
 

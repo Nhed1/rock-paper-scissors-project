@@ -59,17 +59,14 @@ function checkResult(userChoice, pcChoice) {
 }
 
 const getOption = function(e) {
-    let choiceClass = e.path[0].className.split(""),
+    e.stopPropagation(); 
+    let choiceClass = e.target.className
     // take the last value of class name, it's the number of the option
     Useroption = parseInt(choiceClass[choiceClass.length-1])
-    console.log(choiceClass)
     let valuePc = pcRandom()
-
     addChoices(Useroption,valuePc)
-
-
-
     let result = checkResult(Useroption, valuePc)
+    
     console.log(result)
 }
 
