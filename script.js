@@ -1,14 +1,26 @@
-let rock = document.createElement('i').className = 'fas fa-hand-rock'
 
-let choices = ["Rock", "Paper", "Scissor"]
+let choices = ['rock', 'scissors', 'paper']
     Useroption = 0,
     userChoices = document.querySelectorAll('button'),
     displayWin = document.querySelector('.whoWon'),
     displayPlayer = document.querySelector('.playerDiv'),
     displayPC = document.querySelector('.pcDiv')
 
-displayPC.appendChild(rock)
-displayPC.className.add('working')
+function addChoices(choice,valuePc){
+    let element = document.createElement('i')
+    element.classList.add('fas')
+    element.classList.add('fa-hand-'+choices[choice-1])
+    displayPlayer.appendChild(element)
+
+    let elementPc = document.createElement('i')
+    elementPc.classList.add('fas')
+    elementPc.classList.add('fa-hand-'+choices[valuePc-1])
+    console.log(valuePc,choice)
+    displayPC.appendChild(elementPc)
+}
+
+// displayPC.append(rock)
+
 const whoWon = function(playerWon){
     let result;
     if (playerWon == "tie"){
@@ -24,7 +36,6 @@ const whoWon = function(playerWon){
 const pcRandom = function(){
     let num = Math.floor(Math.random() * 3) + 1
         // pcChoice = choices[num -1]
-
     return num
 };
     
@@ -51,11 +62,14 @@ const getOption = function(e) {
     let choiceClass = e.path[0].className.split(""),
     // take the last value of class name, it's the number of the option
     Useroption = parseInt(choiceClass[choiceClass.length-1])
+    console.log(choiceClass)
     let valuePc = pcRandom()
+
+    addChoices(Useroption,valuePc)
+
+
+
     let result = checkResult(Useroption, valuePc)
-    displayWin.textContent = result
-    displayPlayer.appendChild(rock)
-    displayPC.innerHTML = choices[valuePc-1]
     console.log(result)
 }
 
