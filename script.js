@@ -65,9 +65,9 @@ const whoWon = function(playerWon){
     if (playerWon == "tie"){
         result = "TIE!"
     } else if (playerWon) {
-        result = "Player Won!"
+        result = "You Won!"
     } else {
-        result = "PC Won!"
+        result = "You loosed!"
     }
     return result
 }
