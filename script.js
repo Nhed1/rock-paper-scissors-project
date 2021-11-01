@@ -1,6 +1,7 @@
 let pcDiv = document.querySelector('.pcDiv')
 let playerDiv = document.querySelector('.playerDiv')
 let buttons = document.querySelectorAll('button')
+let result = document.querySelector('.whoWins') 
 let players = []
 const pcRandom = function(){
     let num = Math.floor(Math.random() * 3) + 1
@@ -48,48 +49,53 @@ function appendElement(pc, player ){
         players.push(ipc,iplayer)
     }
 
-    console.log(ipc.className)
-    console.log(iplayer.className)
-    
-
+    let resultPc = ipc.className.split('-')[2]
+    let resultPlayer = iplayer.className.split('-')[2]
+    let finalResult = checkResult(resultPlayer, resultPc)
+    result.textContent = finalResult
     
 }
 
 
 // displayPC.append(rock)
 
-// const whoWon = function(playerWon){
-//     let result;
-//     if (playerWon == "tie"){
-//         result = "TIE!"
-//     } else if (playerWon) {
-//         result = "Player Won!"
-//     } else {
-//         result = "PC Won!"
-//     }
-//     return result
-// }
 
+const whoWon = function(playerWon){
+    let result;
+    if (playerWon == "tie"){
+        result = "TIE!"
+    } else if (playerWon) {
+        result = "Player Won!"
+    } else {
+        result = "PC Won!"
+    }
+    return result
+}
 
+function checkResult(userChoice, pcChoice) {
+    if (userChoice === pcChoice) {
+        return whoWon("tie");
     
-// function checkResult(userChoice, pcChoice) {
-//     if (userChoice === pcChoice) {
-//         return whoWon("tie");
+    } else if (userChoice === 'rock' && pcChoice === 'paper') {
+        return whoWon(false)
+
+    } else if (userChoice === 'paper' && pcChoice === 'scissors') {
+        return whoWon(false)
     
-//     } else if (userChoice === 3 && pcChoice === 1) {
-//         return whoWon(false)
+    } else if (userChoice === 'scissors' && pcChoice === 'rock') {
+        return whoWon(false)
+
+    } else if (userChoice === 'paper' && pcChoice === 'rock') {
+        return whoWon(true)
     
-//     } else if (userChoice === 1 && pcChoice === 3) {
-//         return whoWon(true)
+    } else if (userChoice === 'scissors' && pcChoice === 'paper') {
+        return whoWon(true)
+
+    } else if (userChoice === 'rock' && pcChoice === 'scissors') {
+        return whoWon(true)
+    }
     
-//     } else if (userChoice > pcChoice) {
-//         return whoWon(true)
-    
-//     } else {
-//         return whoWon(false)
-//     }
-    
-// }
+}
 
 
 
