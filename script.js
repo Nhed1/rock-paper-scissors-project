@@ -1,7 +1,7 @@
 let pcDiv = document.querySelector('.pcDiv')
 let playerDiv = document.querySelector('.playerDiv')
 let buttons = document.querySelectorAll('button')
-
+let players = []
 const pcRandom = function(){
     let num = Math.floor(Math.random() * 3) + 1
         // pcChoice = choices[num -1]
@@ -33,13 +33,25 @@ function appendElement(pc, player ){
         ipc.classList.add(pc[x])
         iplayer.classList.add(player[x])
     }
-    let players = []
-    players.push(iplayer, ipc)
-    if (players.length == 0){
-        playerDiv.appendChild(players[0])
-        pcDiv.appendChild(players[1])
+
+        // 
+    if (players == 0){
+        players.push(ipc, iplayer)
+        pcDiv.appendChild(ipc)
+        playerDiv.appendChild(iplayer)
+    } else {
+        players = []
+        pcDiv.innerHTML = ''
+        playerDiv.innerHTML = ''
+        pcDiv.appendChild(ipc)
+        playerDiv.appendChild(iplayer)
+        players.push(ipc,iplayer)
     }
-    players = []
+
+    console.log(ipc.className)
+    console.log(iplayer.className)
+    
+
     
 }
 
