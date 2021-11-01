@@ -69,6 +69,8 @@ p,h2 {
 i {
     font-size: 30px;
     pointer-events: none; 
+    height: 30px;
+    width: 30px;
     /* avoid to click in the i */
 }
 
