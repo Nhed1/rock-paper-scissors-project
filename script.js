@@ -67,7 +67,7 @@ const whoWon = function(playerWon){
     } else if (playerWon) {
         result = "You Won!"
     } else {
-        result = "You loosed!"
+        result = "You Lost!"
     }
     return result
 }
